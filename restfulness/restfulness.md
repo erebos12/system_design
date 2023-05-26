@@ -88,4 +88,7 @@ Example: Creating job on server
 5. Now the server will check in the database if the job_id is already present in the database and confirm the execution status, after that it will send the response with the latest status and not rerun the job.
 6. This is how we are using job_id as the binding key to the jobs and avoiding rerunning the job in the retry action.
 
+### Using Idempotency-Key in request
 
+To perform an idempotent request, provide an additional ``Idempotency-Key: <key>`` header to the request.
+For more details, check the web.
