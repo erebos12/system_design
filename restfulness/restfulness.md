@@ -1,7 +1,7 @@
 # REST / Restfulness
 
-Following items are only guidelines, NO rules! 
-But be consistent your design and agree on a standard.
+Following sections represent only guidelines, NO rules! 
+But be consistent in your design and agree on a standard.
 
 ## HTTP Methods
 
