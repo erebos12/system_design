@@ -91,4 +91,5 @@ Example: Creating job on server
 ### Using Idempotency-Key in request
 
 To perform an idempotent request, provide an additional ``Idempotency-Key: <key>`` header to the request.
-For more details, check the web.
+For more details, check 
+[Idempotency Key Example](https://multithreaded.stitchfix.com/blog/2017/06/26/patterns-of-soa-idempotency-key/#:~:text=In%20the%20purchasing%20example%2C%20suppose,ID%20is%20an%20idempotency%20key).
