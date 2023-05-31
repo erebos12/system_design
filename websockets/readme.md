@@ -16,3 +16,6 @@
 - more complicated to implement than HTTP, mostly stateful
 - load balancer can have trouble since long term connection is used
 - new "protocol" needs to be re-invented (unlike in REST)
+
+
+
