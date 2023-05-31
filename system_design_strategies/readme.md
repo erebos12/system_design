@@ -8,6 +8,7 @@
 - Ask for business constraints (budget limits)
 - Don't ask for requirements, dig for them !
 - Improve iteratively your system design! Simplify & Optimize !
+- Always balance out your system design by pros and cons !
 
 ## Scalability
 - horizontal scaling (load balancing) needed ?
