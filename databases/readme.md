@@ -26,4 +26,4 @@ so maybe HashMap is not the best data structure
     - easier to add new shards
     - but single point of failure and must be super reliable
 
-> BE CAREFUL WITH SHARDING ! It can be complicated and increases complexity very much!
+> BE CAREFUL WITH SHARDING ! It can be complicated and could increase complexity significantly!
