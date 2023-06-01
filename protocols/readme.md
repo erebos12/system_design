@@ -1,14 +1,14 @@
 # Protocols
 
-# Table of Contents
+## Table of Contents
 
 1. [REST](#REST)
-2. [Long Polling](#Long Polling)
+2. [Long Polling](#Long-Polling)
 3. [WebSockets](#WebSockets)
 4. [GraphQL](#GraphQL)
 5. [gRPC](#gRPC)
 6. [UDP](#UDP)
-7. [What protocol to use](#What protocol to use)
+7. [What protocol to use](#What-Protocol-To-Use)
 
 ## REST
 
@@ -136,6 +136,8 @@ For more details, check
 - new "protocol" needs to be re-invented (unlike in REST)
 
 ## GraphQL
+- TBC
+
 
 ## gRPC
 
@@ -161,7 +163,7 @@ For more details, check
 ## UDP
 - TBC
 
-## What protocol to use ?
+## What protocol to use
 
 1. Do you have an external API ?
     - gRPC not supported by browser and harder to implement
