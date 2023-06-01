@@ -113,8 +113,32 @@ For more details, check
 .
 
 ## Long Polling
+HTTP Long Polling is a variation of standard polling 
+that emulates a server pushing messages to a client (or browser) efficiently.
+Long polling was one of the first techniques developed to allow a server to ‘push’ data to a client and 
+because of its longevity, it has near-ubiquitous support in all browsers and web technologies.  
+Even in an era with protocols specifically designed for persistent bidirectional communication (such as WebSockets), 
+the ability to long poll still has a place as a fallback mechanism that will work everywhere.
 
-- TBC
+How does it work ?
+
+1. Requests are sent to the server from the browser, like before
+
+2. The server does not close the connection, instead, the connection is kept open until there is data for the server to send
+
+3. The client waits for a response from the server.
+
+4. When data is available, the server sends it to the client
+
+5. The client immediately makes another HTTP Long-polling request to the server
+
+Above: HTTP Long Polling between a client and server.  Note that there is a long time between request and response as the server waits until there is data to send.
+
+This is much more efficient than regular polling.  
+
+- The browser will always receive the latest update when it is available
+
+- The server is not inundated with requests that will never be fulfilled.
 
 ## WebSockets
 
