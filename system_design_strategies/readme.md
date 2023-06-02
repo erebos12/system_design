@@ -1,10 +1,22 @@
 # System Design Strategies
 
 ## General tips
-- Start from the customer experience (Not from the technology) !
-- Start with Non-Functional requirements !
-- For whom is the software made for ? Who are the customers ? How many customers?
+- Start from the customer experience / users perspective (Not from the technology) !
+  - For whom is the software made for ?
+  - Do you have different kind of users ?
+    - Uber: Riders & Drivers
+    - Ebay: Buyers & Sellers
+  - How many of them will be expected per time interval ?
+    - i.e. 100K per month
+- Then ask for Non-Functional requirements !
+  - data amount -> capacity 
+  - request rate (reads/writes per second) 
+  - throughput
+  - availability
+  - scaling
 - What are the key use cases?
+  - concentrate on the most important use-cases first
+  - later you can dig deeper for other use-cases
 - Ask for business constraints (budget limits)
 - Don't ask for requirements, dig for them !
 - Improve iteratively your system design! Simplify & Optimize !
