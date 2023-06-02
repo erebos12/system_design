@@ -139,6 +139,8 @@ This is much more efficient than regular polling.
 - The browser will always receive the latest update when it is available
 
 - The server is not inundated with requests that will never be fulfilled.
+- 
+Further reading - https://www.pubnub.com/blog/http-long-polling/
 
 ## WebSockets
 
