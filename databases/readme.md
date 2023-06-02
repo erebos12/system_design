@@ -12,6 +12,8 @@ so maybe HashMap is not the best data structure
 
 ## Sharding
 
+Splitting large database into smaller databases.
+
 ### Tenant-based sharding (geo-sharding)
   - per country for instance but uneven distribution can happen
   - big shards can still happen and could be too big to handle though
@@ -35,3 +37,26 @@ so maybe HashMap is not the best data structure
 - can avoid re-sharding
 - using range of hashes (0-X => shard 1 / X+1-Y => shard 2 etc.)
 
+## Partitioning
+
+Splitting large database table into smaller tables. Smaller tables
+are faster!
+
+### Partitioning Strategies
+
+Partitioning by:
+
+1. List of values
+   - split one table into separate tables with same content i.e. order records into tables with different order states 
+   - you mostly are interested in records that are in a specific state i.e. orders that are not from the past
+   - that means you might need to move data between tables when state o a record changes
+2. Range of dates
+   - splitting records into different tables for different range of datas
+   - so splitting by range of month/years
+   - i.e. table A has records from 1/1990 to 12/1990 and so on
+   - great if you want to get rid of old data
+3. Hash of key
+   - see Hash-based-sharding 
+
+> Check if DB you use supports Partitioning out of the box.
+In case not, your application have to take care about that! 
