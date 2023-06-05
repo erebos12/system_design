@@ -26,9 +26,9 @@ Splitting large database into smaller databases.
   - no foreign keys, so not that good for relational data
   - adding new shards requires re-sharding which can be very expensive -> "Consistent Hashing"
   - cross-shard operations can be expensive
-  - 'Locator Service' or 'Shard Router' might  be in between to locate our dataset for us
+  - 'Locator Service' or 'Shard Locator' might  be in between to locate our dataset for us
     - easier to add new shards
-    - but single point of failure and must be super reliable
+    - but single point of failure and must be super reliable or scale it (i.e. backup)
 
 > BE CAREFUL WITH SHARDING ! It can be complicated and could increase complexity significantly!
 
