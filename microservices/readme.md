@@ -23,6 +23,19 @@ are all encapsulated as one unit.
 
 ### API Gateway Pattern: Your One-Stop-Shop for Microservices
 
+#### Responsibilities of an API Gateway
+
+- API Composition - see https://microservices.io/patterns/data/api-composition.html
+- Routing 
+- Service discovery
+- Authentication and security policy enforcements
+- Protocol translation
+- Rate Limiting
+- Billing
+- Analytics, Alerting, Monitoring and Statistics
+- Cache Management
+
+
 ### Service Discovery Pattern: Navigating the Microservices Maze with Ease
 
 ### Circuit Breaker Pattern: Shield Your Microservices from Cascading Failures
