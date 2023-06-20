@@ -14,6 +14,8 @@ the scope of microservices, this means that all of the source code
 representing some domain or subdomain (such as a wish list for a customer), along with the corresponding data structures and data,
 are all encapsulated as one unit.
 
+See https://microservices.io/post/architecture/2023/02/09/assemblage-architecture-definition-process.html
+
 ## Microservice Data Consistency
 - https://dilfuruz.medium.com/data-consistency-in-microservices-architecture-5c67e0f65256
 - https://www.baeldung.com/cs/saga-pattern-microservices
