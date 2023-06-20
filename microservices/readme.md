@@ -21,6 +21,8 @@ are all encapsulated as one unit.
 
 ## Microservice Patterns 
 
+See https://microservices.io/index.html !!!
+
 ### API Gateway Pattern: Your One-Stop-Shop for Microservices
 
 #### Responsibilities of an API Gateway
@@ -37,6 +39,9 @@ are all encapsulated as one unit.
 
 
 ### Service Discovery Pattern: Navigating the Microservices Maze with Ease
+
+- Server Side discovery (Load Balancer, Cluster Solution like Kubernetes)
+- Client Side discovery
 
 ### Circuit Breaker Pattern: Shield Your Microservices from Cascading Failures
 
