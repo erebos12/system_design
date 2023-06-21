@@ -69,5 +69,14 @@
     - etc.
 - Agree on a standard in your team/organisation !
 
+## Example: How to figure out writes per second
 
+Assumption: 600 Mio requests per month (600 is better to calculate)
+
+- 600M / 30 days = 20M per day
+- 20M rounding up to ~24M / 24 hours = 1M per hour
+- 1M rounding up to ~1.2M / 60 min = 20K per minute
+- 20K rounding down to ~18K / 60 sec = 300 per second
+
+=> Result: 300 writes per second
 
