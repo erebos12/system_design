@@ -65,3 +65,6 @@ See https://microservices.io/index.html !!!
 
 ### Strangler Pattern: Transform Your Monolith into Microservices with Confidence
 
+## Reviewing Microservice Architecture
+
+https://chrisrichardson.net/consulting-review.html
