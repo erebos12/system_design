@@ -20,12 +20,13 @@
     - i.e. 100K per month
 
 ### 2. Ask for Non-Functional requirements
-- data volume / capacity to derive the Storage requirement
+- Ask for expected data volume / capacity to derive the Storage requirement
   - See [Example](#Example-to-derive-storage-requirements-for-DB)
-- request rate (reads/writes per second)
-- throughput
-- availability
-- scaling
+- Ask for expected request rate (reads/writes per time interval)
+  - See [Example](#Example-to-figure-out-writes-per-second)
+  - See [Throughput](#Throughput)
+- Ask for Availability requirements - [Availability](#Availability)
+- Ask for Scalability requirements - [Scalability](#Scalability)
 
 ### 3. What are the key use cases
 - concentrate on the most important use-cases first
@@ -70,7 +71,7 @@
     - etc.
 - Agree on a standard in your team/organisation !
 
-## Example: How to figure out writes per second
+## Example to figure out writes per second
 
 Assumption: 600 Mio requests per month (600 is better to calculate)
 
