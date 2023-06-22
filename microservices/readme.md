@@ -76,3 +76,14 @@ See https://blog.devgenius.io/microservices-communication-fetching-data-from-ano
 ## Reviewing Microservice Architecture
 
 https://chrisrichardson.net/consulting-review.html
+
+## Microservice - Data Patterns
+
+### Database per Service
+
+- Using API composition and/or 
+- CQRS (Command and Query Responsibility Segregation) 
+  - pattern that separates read and update operations for a data store)
+
+### Shared database
+- TBC
