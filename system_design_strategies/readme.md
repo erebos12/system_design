@@ -25,6 +25,7 @@
 - Ask for expected request rate (reads/writes per time interval)
   - See [Example](#Example-to-figure-out-writes-per-second)
   - See [Throughput](#Throughput)
+  - Is system read and/or write heavy ?
 - Ask for Availability requirements - [Availability](#Availability)
 - Ask for Scalability requirements - [Scalability](#Scalability)
 
