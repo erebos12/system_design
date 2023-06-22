@@ -2,31 +2,26 @@
 
 ## 1. Define system operations
 
-- NR001: Upload files incl. validation
+- SO001: Upload files incl. validation
   - asset file, journal file, account file 
-- NR002: Create client
-- NR003: Create public facility for one client
-- NR004: Create years for one public facility
-- NR005: Create configurations for one year (complex config)
-  - config A - account ranges
-  - config B
-  - config C
   - ... more will come up in future
-- NR006: Calculate reports
+- SO002: Create client
+- SO003: Create public facility for one client
+- SO004: Create fee-calculation for one year & one public facility
+- SO005: Create configurations for one fee-calculation/year (complex config)
+  - sub-config A - account ranges
+  - sub-config B - interest rates
+  - ... more will come up in future
+- SO006: Calculate reports
   - report A, report B, report C
-  - more will come up in future
-- NR007: Download reports via Excel
-- NR008: Dashboard for reports
-- NR009: statistics 
-  - based on file data from clients
-  - based on reports
-  - based on configurations
+  - ... more will come up in future
+- SO007: Dashboard for reports
 
 ## 2. Define subdomains based on operations
 
 - client
 - public facility
-- year
+- calculation-year
 - files
   - assets
   - journal
@@ -39,38 +34,49 @@
   - report A
   - report B
   - etc.
-
+- dashboards
+  - for report A, B, C ...
 
 ## 3. For each operation, define group of domains
 
-1. Operation: NR002: Create client
+1. Operation: - SO001: Upload files incl. validation
+   - required-domains:
+     - client & public facility & calculation-year & files
+     
+2. Operation: SO002: Create client
    - required-domains:
       - client (ONLY CLIENT)
 
-2. Operation: NR003: Create public facility for one client
+3. Operation: SO003: Create public facility for one client
    - required-domains:
       - client & public facility
 
-3. Operation: NR004: Create years for one public facility
+4. Operation: SO004: Create fee-calculation for one year & one public facility
    - required-domains:
-      - client & public facility & years
+      - client & public facility & calculation-year
 
-4. Operation: - NR001: Upload files incl. validation
+5. Operation: SO006: Calculate reports
    - required-domains:
-     - client & public facility & year & files
-
+      - client & public facility & calculation-year & configuration & files
+     
 ... continue for other operations !!
 
-## 4. Microservices based on group of domains
+## 4. Microservices based on domains 
 
 - Client Service
   - maybe client, Public facility & year in one single service
 - Public facility Service
-- Year Service
+- Calculation-Year Service
 - File Service
 - Report Service
   - maybe for each report a single service
 - Configuration Service
   - maybe for each configuration a single service
+- Dashboard Service
+  - maybe for each dashboard a single service
 
-## 5. Evaluate & Refactor - go back to step 1.
+## 5. Microservices communication based on system operations & required subdomains
+
+- TBC 
+
+## 6. Evaluate & Refactor - go back to step 1.
