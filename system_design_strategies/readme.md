@@ -20,7 +20,8 @@
     - i.e. 100K per month
 
 ### 2. Ask for Non-Functional requirements
-- data volume -> capacity
+- data volume / capacity to derive the Storage requirement
+  - See [Example](#Example-to-derive-storage-requirements-for-DB)
 - request rate (reads/writes per second)
 - throughput
 - availability
@@ -80,3 +81,16 @@ Assumption: 600 Mio requests per month (600 is better to calculate)
 
 => Result: 300 writes per second
 
+## Example to derive storage requirements for DB
+
+Note: Just an example. The numbers can be changed as needed!
+
+For instance to determine the storage requirement for a URL shortener, could look like that:
+
+Assumption: 30 billion URLs in total to store
+
+- Each URL has 100 bytes in average
+- 30 billion urls * 100 bytes = 3 Trillion bytes = 3 Billion GB = 3 Million MB = 3 GB
+
+
+=> Result: 3 GB 
