@@ -65,6 +65,14 @@ See https://microservices.io/index.html !!!
 
 ### Strangler Pattern: Transform Your Monolith into Microservices with Confidence
 
+### Microservices communication: Fetching data from another service
+
+See https://blog.devgenius.io/microservices-communication-fetching-data-from-another-service-7eed741bc070
+
+1. Direct call to the other service
+2. Embedded library
+3. Local data projection
+
 ## Reviewing Microservice Architecture
 
 https://chrisrichardson.net/consulting-review.html
