@@ -13,7 +13,7 @@ But be consistent in your design and agree on a standard.
 
 ## PUT vs. PATCH
 
-When you receive a PUT for a partial should throw an error.
+When you receive a PUT for a partial update should throw an error.
 For partial updates of resource, use PATCH!
 
 ## Status-Codes
@@ -58,7 +58,7 @@ Example:
 
 ## Idempotency
 
-- Read https://www.rfc-editor.org/rfc/rfc7231
+- Read https://www.rfc-editor.org/rfc/rfc7231#section-4.2.2
 - Important for retry scenarios !
 
 - idempotent methods:
