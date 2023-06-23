@@ -29,7 +29,7 @@ See https://microservices.io/index.html !!!
 
 #### Responsibilities of an API Gateway
 
-- API Composition - see https://microservices.io/patterns/data/api-composition.html
+- API Composition (for simple data queries) - see https://microservices.io/patterns/data/api-composition.html
 - Routing 
 - Service discovery
 - Authentication and security policy enforcements
@@ -39,6 +39,15 @@ See https://microservices.io/index.html !!!
 - Analytics, Alerting, Monitoring and Statistics
 - Cache Management
 
+> **_Attention_**!
+> Another way is to have a separate service that calls all the source services, 
+fetching data from each of them. Then it combines the received data into one data structure and 
+returns it to the client. This functionality is what the API Gateway service is usually responsible for. 
+This pattern is very common in microservices architecture and 
+works in most cases related to fetching data for serving GET requests. 
+**_But it is very limited when you have to apply business logic and, usually, 
+it’s not a functionality of the Gateway service_**, as all the domain-related logic 
+is contained in the dedicated microservice.
 
 ### Service Discovery Pattern: Navigating the Microservices Maze with Ease
 
