@@ -16,6 +16,19 @@ are all encapsulated as one unit.
 
 See https://microservices.io/post/architecture/2023/02/09/assemblage-architecture-definition-process.html
 
+## When to use Microservice Architecture ?
+- Business teams are separated teams (as per departments) such es Product, Sales, Payment etc.
+  - Also organizational change in future will come up. So new business teams will pop up.
+- Innovate and experiment with new features as soon as possible
+  - i.e. Product team wants to test a new feature independently from other departments
+  - so deployment should be independent from other teams
+- Flexible scaling of single components 
+  - more load on product search, then scale only product components, not the others
+  - for instance more users are searching products but they don't buy more, so no scaling in payment needed
+- Technology agnostic approach
+  - tech teams should be able to use different tech-stacks for their services
+
+
 ## Microservice Data Consistency
 - https://dilfuruz.medium.com/data-consistency-in-microservices-architecture-5c67e0f65256
 - https://www.baeldung.com/cs/saga-pattern-microservices
@@ -24,6 +37,24 @@ See https://microservices.io/post/architecture/2023/02/09/assemblage-architectur
 ## Microservice Patterns 
 
 See https://microservices.io/index.html !!!
+
+### Database-per-Service-Pattern
+
+See 'Bounded Context'. Each microservice owns its own data.
+
+### Polyglot Persistence
+
+Diffenerent database types for different service possible. 
+For instance:
+- Document store (NoSQL)
+- Key-Value store
+- Relational Database
+- Graph Database
+
+Also evaluate following aspects:
+- Using API composition and/or 
+- CQRS (Command and Query Responsibility Segregation) 
+  - pattern that separates read and update operations for a data store)
 
 ### API Gateway Pattern: Your One-Stop-Shop for Microservices
 
@@ -82,17 +113,42 @@ See https://blog.devgenius.io/microservices-communication-fetching-data-from-ano
 2. Embedded library
 3. Local data projection
 
-## Reviewing Microservice Architecture
+## Design Strategies for Microservice Architecture
 
 https://chrisrichardson.net/consulting-review.html
 
-## Microservice - Data Patterns
+Main considerations:
+1. Microservice Decomposition
+2. Communication
+3. Data Managment
+4. Transaction Management
+5. Deployments
+6. Resilience
 
-### Database per Service
+### 1. Microservice Decomposition
 
-- Using API composition and/or 
-- CQRS (Command and Query Responsibility Segregation) 
-  - pattern that separates read and update operations for a data store)
+> Tip: Start with the organizational structure. How is the organization it structured? What business teams/departments exist and how do they work with each other (i.e. Product, Order, Payment team) ?
 
-### Shared database
-- TBC
+- Decompose by sub-domains (*Bounded Context*)
+  - Conduct 'Domain Driven Design'
+    - INPUT: functional requirements such as user-stories
+    - OUTPT:  "Object Relationship Diagram" which gives us *Bounded-Contexts*
+  - *Bounded-Context* could be: Customers, Orders, Payment and Shopping Cart
+  - Now identify *"Bounded-Context Boundaries"* by the entities which are used by Bounded-Contexts:
+    - Customers: Customer, Address, Companies, Account
+    - Orders: Customer, Order, Items, History
+    - Payment: Payers, Payments, Adress
+    - Shopping cart: Users, Cart, Items, Prices
+      
+      ==> Overlappings & Redundancies are important !!!
+- Identify microservices:
+  - Microservices should NOT use too many entities (see *"Bounded-Context Boundaries"*)
+  - NOT TOO SMALL & NOT TOO BIG
+  - when one microservice use ALL entities, then it gets to complex (too big)
+  - For instance a Customer microservice only uses Customer data such as name & address and the Payment service only use paymant data such as credit card, bank account
+  - But it can also be possible that the Customer service uses also the payment data for a customer. So then only one microservice is needed! You need to balance this out.
+  - one microservice only for the credit-card might me TOO SMALL
+
+### 2. Communication
+
+See https://github.com/erebos12/system_design/tree/main/protocols
