@@ -74,7 +74,24 @@ Main considerations:
 
 ### 2. Communication
 
-See https://github.com/erebos12/system_design/tree/main/protocols
+What type of communication - Sync/Async
+
+- Non-Blocking / Async Approach:
+    - using AMQP (Advanced Message Queuing Protocol)
+    - Kafka or RabbitMQ
+    - one-to-one 
+      - only 1 producer <-> queue <-> 1 consumer
+    - one-to-many 
+      - 1 producer <-> queue <-> n consumers
+      - uses Topic model
+
+What protocols to choose 
+- see https://github.com/erebos12/system_design/tree/main/protocols
+
+Avoid direct communication from client-apps to microservices! Use API-Gateway and/or Orchestrator services.
+
+
+
 
 
 ## Microservice Patterns 
@@ -83,7 +100,7 @@ See https://microservices.io/index.html !!!
 
 ### Database-per-Service-Pattern
 
-See 'Bounded Context'. Each microservice owns its own data.
+See [Bounded Context](#Bounded-Context). Each microservice owns its data.
 
 ### Polyglot Persistence
 
