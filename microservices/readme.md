@@ -1,5 +1,27 @@
 # Microservice Architecture
 
+Table of Content
+
+1. [When to use Microservice Architecture](#When-to-use-Microservice-Architecture)
+2. [Bounded Context](#Bounded-Context)
+3. [Design Strategies](#Design-Strategies)
+4. [Microservice Patterns](#Microservice-Patterns)
+5. [Microservice Data Consistency](#Microservice-Data-Consistency)
+
+See also https://microservices.io/post/architecture/2023/02/09/assemblage-architecture-definition-process.html
+
+## When to use Microservice Architecture
+- Business teams are separated teams (as per departments) such es Product, Sales, Payment etc.
+  - Also organizational change in future will come up. So new business teams will pop up.
+- Innovate and experiment with new features as soon as possible
+  - i.e. Product team wants to test a new feature independently from other departments
+  - so deployment should be independent from other teams
+- Flexible scaling of single components 
+  - more load on product search, then scale only product components, not the others
+  - for instance more users are searching products but they don't buy more, so no scaling in payment needed
+- Technology agnostic approach
+  - tech teams should be able to use different tech-stacks for their services
+
 ## Bounded Context
 
 Each microservice typically owns its own data,
@@ -14,24 +36,45 @@ the scope of microservices, this means that all of the source code
 representing some domain or subdomain (such as a wish list for a customer), along with the corresponding data structures and data,
 are all encapsulated as one unit.
 
-See https://microservices.io/post/architecture/2023/02/09/assemblage-architecture-definition-process.html
+## Design Strategies
 
-## When to use Microservice Architecture ?
-- Business teams are separated teams (as per departments) such es Product, Sales, Payment etc.
-  - Also organizational change in future will come up. So new business teams will pop up.
-- Innovate and experiment with new features as soon as possible
-  - i.e. Product team wants to test a new feature independently from other departments
-  - so deployment should be independent from other teams
-- Flexible scaling of single components 
-  - more load on product search, then scale only product components, not the others
-  - for instance more users are searching products but they don't buy more, so no scaling in payment needed
-- Technology agnostic approach
-  - tech teams should be able to use different tech-stacks for their services
+https://chrisrichardson.net/consulting-review.html
 
+Main considerations:
+1. Microservice Decomposition
+2. Communication
+3. Data Managment
+4. Transaction Management
+5. Deployments
+6. Resilience
 
-## Microservice Data Consistency
-- https://dilfuruz.medium.com/data-consistency-in-microservices-architecture-5c67e0f65256
-- https://www.baeldung.com/cs/saga-pattern-microservices
+### 1. Microservice Decomposition
+
+> Tip: Start with the organizational structure. How is the organization it structured? What business teams/departments exist and how do they work with each other (i.e. Product, Order, Payment team) ?
+
+- Decompose by sub-domains (*Bounded Context*)
+  - Conduct 'Domain Driven Design'
+    - INPUT: functional requirements such as user-stories
+    - OUTPT:  "Object Relationship Diagram" which gives us *Bounded-Contexts*
+  - *Bounded-Context* could be: Customers, Orders, Payment and Shopping Cart
+  - Now identify *"Bounded-Context Boundaries"* by the entities which are used by Bounded-Contexts:
+    - Customers: Customer, Address, Companies, Account
+    - Orders: Customer, Order, Items, History
+    - Payment: Payers, Payments, Adress
+    - Shopping cart: Users, Cart, Items, Prices
+      
+      ==> Overlappings & Redundancies are important !!!
+- Identify microservices:
+  - Microservices should NOT use too many entities (see *"Bounded-Context Boundaries"*)
+  - NOT TOO SMALL & NOT TOO BIG
+  - when one microservice use ALL entities, then it gets to complex (too big)
+  - For instance a Customer microservice only uses Customer data such as name & address and the Payment service only use paymant data such as credit card, bank account
+  - But it can also be possible that the Customer service uses also the payment data for a customer. So then only one microservice is needed! You need to balance this out.
+  - one microservice only for the credit-card might me TOO SMALL
+
+### 2. Communication
+
+See https://github.com/erebos12/system_design/tree/main/protocols
 
 
 ## Microservice Patterns 
@@ -113,42 +156,6 @@ See https://blog.devgenius.io/microservices-communication-fetching-data-from-ano
 2. Embedded library
 3. Local data projection
 
-## Design Strategies for Microservice Architecture
-
-https://chrisrichardson.net/consulting-review.html
-
-Main considerations:
-1. Microservice Decomposition
-2. Communication
-3. Data Managment
-4. Transaction Management
-5. Deployments
-6. Resilience
-
-### 1. Microservice Decomposition
-
-> Tip: Start with the organizational structure. How is the organization it structured? What business teams/departments exist and how do they work with each other (i.e. Product, Order, Payment team) ?
-
-- Decompose by sub-domains (*Bounded Context*)
-  - Conduct 'Domain Driven Design'
-    - INPUT: functional requirements such as user-stories
-    - OUTPT:  "Object Relationship Diagram" which gives us *Bounded-Contexts*
-  - *Bounded-Context* could be: Customers, Orders, Payment and Shopping Cart
-  - Now identify *"Bounded-Context Boundaries"* by the entities which are used by Bounded-Contexts:
-    - Customers: Customer, Address, Companies, Account
-    - Orders: Customer, Order, Items, History
-    - Payment: Payers, Payments, Adress
-    - Shopping cart: Users, Cart, Items, Prices
-      
-      ==> Overlappings & Redundancies are important !!!
-- Identify microservices:
-  - Microservices should NOT use too many entities (see *"Bounded-Context Boundaries"*)
-  - NOT TOO SMALL & NOT TOO BIG
-  - when one microservice use ALL entities, then it gets to complex (too big)
-  - For instance a Customer microservice only uses Customer data such as name & address and the Payment service only use paymant data such as credit card, bank account
-  - But it can also be possible that the Customer service uses also the payment data for a customer. So then only one microservice is needed! You need to balance this out.
-  - one microservice only for the credit-card might me TOO SMALL
-
-### 2. Communication
-
-See https://github.com/erebos12/system_design/tree/main/protocols
+## Microservice Data Consistency
+- https://dilfuruz.medium.com/data-consistency-in-microservices-architecture-5c67e0f65256
+- https://www.baeldung.com/cs/saga-pattern-microservices
