@@ -42,7 +42,7 @@ https://chrisrichardson.net/consulting-review.html
 
 Main considerations:
 1. Microservice Decomposition
-2. Communication
+2. [Communication](#Communication)
 3. Data Managment
 4. Transaction Management
 5. Deployments
@@ -72,7 +72,7 @@ Main considerations:
   - But it can also be possible that the Customer service uses also the payment data for a customer. So then only one microservice is needed! You need to balance this out.
   - one microservice only for the credit-card might me TOO SMALL
 
-### 2. Communication
+### Communication
 
 What type of communication - Sync/Async
 
