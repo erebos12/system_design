@@ -57,7 +57,7 @@ Main considerations:
     - INPUT: functional requirements such as user-stories
     - OUTPT:  "Object Relationship Diagram" which gives us *Bounded-Contexts*
   - *Bounded-Context* could be: Customers, Orders, Payment and Shopping Cart
-  - Now identify *"Bounded-Context Boundaries"* by the entities which are used by Bounded-Contexts:
+  - Now identify *"Bounded-Context Boundaries"* by the entities/objects used in a specific Bounded-Contexts:
     - Customers: Customer, Address, Companies, Account
     - Orders: Customer, Order, Items, History
     - Payment: Payers, Payments, Adress
