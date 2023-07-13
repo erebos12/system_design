@@ -41,14 +41,14 @@ are all encapsulated as one unit.
 https://chrisrichardson.net/consulting-review.html
 
 Main considerations:
-1. Microservice Decomposition
-2. [Communication](#Communication)
-3. Data Managment
-4. Transaction Management
-5. Deployments
-6. Resilience
+- [Microservice Decomposition](#Microservice-Decomposition)
+- [Communication](#Communication)
+- Data Managment
+- Transaction Management
+- Deployments
+- Resilience
 
-### 1. Microservice Decomposition
+### Microservice Decomposition
 
 > Tip: Start with the organizational structure. How is the organization it structured? What business teams/departments exist and how do they work with each other (i.e. Product, Order, Payment team) ?
 
