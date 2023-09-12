@@ -122,10 +122,14 @@ Also evaluate following aspects:
 
 - API Composition (for simple data queries) - see https://microservices.io/patterns/data/api-composition.html
 - Routing 
-- Service discovery
-- Authentication and security policy enforcements
+- Load Balancing
+- Circuit Breaker
+- Authentication and Authorization
+- SSL Certificate
+- Logging
 - Protocol translation
 - Rate Limiting
+- Token Managment
 - Billing
 - Analytics, Alerting, Monitoring and Statistics
 - Cache Management
