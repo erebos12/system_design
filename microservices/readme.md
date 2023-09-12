@@ -130,15 +130,12 @@ Also evaluate following aspects:
 - Analytics, Alerting, Monitoring and Statistics
 - Cache Management
 
-> **_Attention_**!
-> Another way is to have a separate service that calls all the source services, 
-fetching data from each of them. Then it combines the received data into one data structure and 
-returns it to the client. This functionality is what the API Gateway service is usually responsible for. 
+> **_Be careful with Gateway Routing Pattern !_**
+
+> A widely used way of an API Gateway is that it calls different backend-services for fetching data. Then it combines the received data into one data structure and returns it to the client. This functionality is what the API Gateway service is usually responsible for. 
 This pattern is very common in microservices architecture and 
-works in most cases related to fetching data for serving GET requests. 
-**_But it is very limited when you have to apply business logic and, usually, 
-it’s not a functionality of the Gateway service_**, as all the domain-related logic 
-is contained in the dedicated microservice.
+works in most cases related to fetching data for serving GET requests (easy logic). 
+**_But it is very limited when you have to apply business logic. Does the business logic grow and gets more and more complex, then it’s usually not a functionality of the Gateway service!!! In this case a dedicated microservice should handle those kind of logic, NOT the API-Gateway_**.
 
 ### Service Discovery Pattern: Navigating the Microservices Maze with Ease
 
