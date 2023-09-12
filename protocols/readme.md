@@ -113,9 +113,9 @@ For more details, check
 [Idempotency Key Example](https://multithreaded.stitchfix.com/blog/2017/06/26/patterns-of-soa-idempotency-key/#:~:text=In%20the%20purchasing%20example%2C%20suppose,ID%20is%20an%20idempotency%20key)
 .
 
-## AMQP - Advanced Message Queuing Protocol
+## AMQP 
 
-Services don't call each other directly, instead they created events and cosume events from message broker systems, such as Kafka or RabbitMQ, in *async* way, also known as *Publish/Subscribe Pattern*.
+In AMQP - Advanced Message Queuing Protocol, services don't call each other directly, instead they produce and cosume events from message broker systems, such as Kafka or RabbitMQ, in an *async* way, also known as *Publish/Subscribe Pattern*.
 
 ### Pros
 
