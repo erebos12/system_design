@@ -3,12 +3,13 @@
 ## Table of Contents
 
 1. [REST](#REST)
-2. [Long Polling](#Long-Polling)
-3. [WebSockets](#WebSockets)
-4. [GraphQL](#GraphQL)
-5. [gRPC](#gRPC)
-6. [UDP](#UDP)
-7. [What protocol to use](#What-Protocol-To-Use)
+2. [AMQP](#AMQP)
+3. [Long Polling](#Long-Polling)
+4. [WebSockets](#WebSockets)
+5. [GraphQL](#GraphQL)
+6. [gRPC](#gRPC)
+7. [UDP](#UDP)
+8. [What protocol to use](#What-Protocol-To-Use)
 
 ## REST
 
@@ -112,6 +113,19 @@ For more details, check
 [Idempotency Key Example](https://multithreaded.stitchfix.com/blog/2017/06/26/patterns-of-soa-idempotency-key/#:~:text=In%20the%20purchasing%20example%2C%20suppose,ID%20is%20an%20idempotency%20key)
 .
 
+## AMQP - Advanced Message Queuing Protocol
+
+Services don't call each other directly, instead they created events and cosume events from message broker systems, such as Kafka or RabbitMQ, in *async* way, also known as *Publish/Subscribe Pattern*.
+
+### Pros
+
+- Decoupling of producers and consumers of messages since the don't know each other.
+
+### Cons
+
+- No clear central place or orchestrator which increases complexity in the archoitecture
+
+
 ## Long Polling
 HTTP Long Polling is a variation of standard polling 
 that emulates a server pushing messages to a client (or browser) efficiently.
@@ -139,7 +153,7 @@ This is much more efficient than regular polling.
 - The browser will always receive the latest update when it is available
 
 - The server is not inundated with requests that will never be fulfilled.
-- 
+
 Further reading - https://www.pubnub.com/blog/http-long-polling/
 
 ## WebSockets
