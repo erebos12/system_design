@@ -141,6 +141,15 @@ This pattern is very common in microservices architecture and
 works in most cases related to fetching data for serving GET requests (easy logic). 
 **_But it is very limited when you have to apply business logic. Does the business logic grow and gets more and more complex, then it’s usually not a functionality of the Gateway service!!! In this case a dedicated microservice should handle those kind of logic, NOT the API-Gateway_**.
 
+### Backends for Frontends Pattern - BFF
+
+- seperate API for specific frontend application
+- For example you can have dedicated API Gateways responsible for mobile, web and desktops apps
+- when API Gateway for desktops app fails the mobile and web apps are not affected (no single-point-of-failure)
+- you can independently scale API gatewayx when its needed, i.e. multiple API gateways for mobile apps but not for web apps
+
+
+
 ### Service Discovery Pattern: Navigating the Microservices Maze with Ease
 
 - Server Side discovery (Load Balancer, Cluster Solution like Kubernetes)
