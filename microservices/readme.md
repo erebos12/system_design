@@ -11,16 +11,17 @@ Table of Content
 See also https://microservices.io/post/architecture/2023/02/09/assemblage-architecture-definition-process.html
 
 ## When to use Microservice Architecture
-- Business teams are separated teams (as per departments) such es Product, Sales, Payment etc.
+- Business teams are separated teams (as per departments) such as Product, Sales, Payment etc.
   - Also organizational change in future will come up. So new business teams will pop up.
 - Innovate and experiment with new features as soon as possible
   - i.e. Product team wants to test a new feature independently from other departments
   - so deployment should be independent from other teams
-- Flexible scaling of single components 
-  - more load on product search, then scale only product components, not the others
+- Flexible scaling of single components/departments
+  - more load on product search, which means scale only product components, not the others
   - for instance more users are searching products but they don't buy more, so no scaling in payment needed
 - Technology agnostic approach
   - tech teams should be able to use different tech-stacks for their services
+  - this is the foundation for tecnical *innovation*
 
 ## Bounded Context
 
@@ -50,12 +51,15 @@ Main considerations:
 
 ### Microservice Decomposition
 
-> Tip: Start with the organizational structure. How is the organization it structured? What business teams/departments exist and how do they work with each other (i.e. Product, Order, Payment team) ?
+> Tip: Start with the organizational structure. 
+Ask questions like: 
+  - How is the organization it structured? 
+  - What business teams/departments exist and how do they work with each other (i.e. Product, Order, Payment team) ?
 
-- Decompose by sub-domains (*Bounded Context*)
+#### Decompose by sub-domains (*Bounded Context*)
   - Conduct 'Domain Driven Design'
     - INPUT: functional requirements such as user-stories
-    - OUTPT:  "Object Relationship Diagram" which gives us *Bounded-Contexts*
+    - OUTPUT:  "Object Relationship Diagram" which gives us *Bounded-Contexts*
   - *Bounded-Context* could be: Customers, Orders, Payment and Shopping Cart
   - Now identify *"Bounded-Context Boundaries"* by the entities/objects used in a specific Bounded-Contexts:
     - Customers: Customer, Address, Companies, Account
