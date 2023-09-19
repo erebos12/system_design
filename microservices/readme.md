@@ -39,7 +39,7 @@ are all encapsulated as one unit.
 
 ## Design Strategies
 
-https://chrisrichardson.net/consulting-review.html
+Microservice Architecture: https://microservices.io/patterns/microservices.html
 
 Main considerations:
 - [Microservice Decomposition](#Microservice-Decomposition)
