@@ -3,6 +3,8 @@
 Following sections represent only guidelines, NO rules! 
 But be consistent in your design and agree on a standard.
 
+> **Tipp**: Get familiar with _RFC7231_ (https://datatracker.ietf.org/doc/html/rfc7231)
+
 ## HTTP Methods
 
 - GET - read
@@ -15,6 +17,19 @@ But be consistent in your design and agree on a standard.
 
 When you receive a PUT for a partial update should throw an error.
 For partial updates of resource, use PATCH!
+
+## POST and 201 & Location-Header
+
+Snippet from RFC 7231:
+
+> If one or more resources has been created on the origin server as a
+  result of successfully processing a POST request, the origin server
+  SHOULD send a 201 (Created) response containing a Location header
+  field that provides an identifier for the primary resource created
+  (Section 7.1.2) and a representation that describes the status of the
+  request while referring to the new resource(s).
+
+See https://datatracker.ietf.org/doc/html/rfc7231#section-4.3.3
 
 ## Status-Codes
 
