@@ -20,9 +20,10 @@
     - i.e. 100K per month
 
 ### 2. Ask for Non-Functional requirements
-- Ask for expected data volume / capacity to derive the Storage requirement
+- Ask for expected data volume / capacity to derive the Storage requirement 
   - See [Example](#Example-to-derive-storage-requirements-for-DB)
 - Ask for expected request rate (reads/writes per time interval)
+  - You can ask for number of active/inactive users per time intervall
   - See [Example](#Example-to-figure-out-writes-per-second)
   - See [Throughput](#Throughput)
   - Is system read and/or write heavy ?

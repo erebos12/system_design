@@ -201,7 +201,8 @@ Further reading - https://www.pubnub.com/blog/http-long-polling/
 - payload not human-readable (binary)
 
 ## UDP
-- TBC
+- unreliable protocol in opposite to TCP
+- messages can be lost
 
 ## What protocol to use
 
@@ -209,9 +210,11 @@ Further reading - https://www.pubnub.com/blog/http-long-polling/
     - gRPC not supported by browser and harder to implement
     - REST, WebSocket, GraphQL, UDP, Long Polling can be an option
 2. Is communication bidirectional (server needs to push messages) ?
-    - prefer WebSockets or UDP
+    - prefer WebSockets, gRPC or UDP
 3. High throughput needed ?
     - prefer WebSockets, gRPC or UDP
 4. Support for WebBrowser ?
     - No gRPC !
     - REST, GraphQL, WebSockets or Long Polling
+5. When using UDP ?
+    - you can lose messages. Is that ok for your application ?
