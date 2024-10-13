@@ -22,7 +22,7 @@ See also https://microservices.io/post/architecture/2023/02/09/assemblage-archit
   - for instance more users are searching products but they don't buy more, so no scaling in payment needed
 - Technology agnostic approach
   - tech teams should be able to use different tech-stacks for their services
-  - this is the foundation for tecnical *innovation*
+  - this is the foundation for *technical innovation*
 
 ## Bounded Context
 
