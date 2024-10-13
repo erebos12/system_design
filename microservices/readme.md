@@ -105,7 +105,7 @@ See [Bounded Context](#Bounded-Context). Each microservice owns its data.
 
 ### Polyglot Persistence
 
-Diffenerent database types for different service possible. 
+Different database types for different service possible. 
 For instance:
 - Document store (NoSQL)
 - Key-Value store
