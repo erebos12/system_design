@@ -145,6 +145,10 @@ This pattern is very common in microservices architecture and
 works in most cases related to fetching data for serving GET requests (easy logic). 
 **_But it is very limited when you have to apply business logic. Does the business logic grow and gets more and more complex, then it’s usually not a functionality of the Gateway service!!! In this case a dedicated microservice should handle those kind of logic, NOT the API-Gateway_**.
 
+**icroservices Authentication and Authorization Using API Gateway**
+
+See Medium article https://medium.com/permify-tech-blog/microservices-authentication-and-authorization-using-api-gateway-b04c058bf00f
+
 ### Backends for Frontends Pattern - BFF
 
 - seperate API for specific frontend application
