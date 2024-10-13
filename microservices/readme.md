@@ -7,6 +7,7 @@ Table of Content
 3. [Design Strategies](#Design-Strategies)
 4. [Microservice Patterns](#Microservice-Patterns)
 5. [Microservice Data Consistency](#Microservice-Data-Consistency)
+6. [Links](#Links)
 
 See also https://microservices.io/post/architecture/2023/02/09/assemblage-architecture-definition-process.html
 
@@ -191,3 +192,8 @@ See https://blog.devgenius.io/microservices-communication-fetching-data-from-ano
 ## Microservice Data Consistency
 - https://dilfuruz.medium.com/data-consistency-in-microservices-architecture-5c67e0f65256
 - https://www.baeldung.com/cs/saga-pattern-microservices
+
+
+## Links
+
+**Top 10 Microservices Design Patterns you should know** - https://medium.com/@sylvain.tiset/top-10-microservices-design-patterns-you-should-know-1bac6a7d6218
