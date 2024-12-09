@@ -1,0 +1,1 @@
+Siehe https://news.microsoft.com/de-de/im-daten-dschungel-wie-microsoft-mit-dem-cloud-act-umgeht/?utm_source=chatgpt.com
